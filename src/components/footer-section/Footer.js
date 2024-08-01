@@ -12,7 +12,7 @@ const Footer = () => {
             <div className="footer-content">
                 <div className="footer-section about">
                     <img src={Logo} alt="Car Sound 24" className="logo" />
-                    <h2>About CAR SOUND 24</h2>
+                    <h2>About <span>CAR SOUND 24</span></h2>
                     <p>
                         Your ultimate destination for premium car infotainment
                         systems. Explore our wide range of top-quality car
@@ -86,8 +86,8 @@ const Footer = () => {
                 </div>
 
                 <div className="footer-section contact">
-                    <h3>Follow Us On</h3>
-                    <div className="socials">
+                    <div className="cnt-head">Follow Us On</div>
+                    <div className="cnt-socials">
                         <a href="#">
                             <img src={Instagram} alt="" />
                         </a>
@@ -95,13 +95,13 @@ const Footer = () => {
                             <img src={Facebook} alt="" />
                         </a>
                     </div>
-                    <p>
+                    <div className="cnt-phone">
                         <img src={Call} alt="" /> (252) 555-0126
-                    </p>
-                    <p>
+                    </div>
+                    <div className="cnt-mail">
                         <img src={Mail} alt="" />
                         alma.lawson@example.com
-                    </p>
+                    </div>
                 </div>
             </div>
         </footer>
