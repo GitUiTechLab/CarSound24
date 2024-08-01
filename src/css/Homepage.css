@@ -416,8 +416,8 @@
   /* Additional CSS for the heart icon */
 .favorite-icon {
   position: absolute;
-  top: 10px;
-  right: 10px;
+  top: 40px;
+  right: 30px;
   font-size: 24px;
   color: #e63946;
   cursor: pointer;
@@ -533,16 +533,38 @@
 
 .view-product-button,
 .add-to-cart-button {
+  width: 90%;
   background-color: #fff;
   border: 1px solid #e63946;
   color: #e63946;
-  border-radius: 5px;
-  padding: 8px 12px;
-  margin: 5px 0;
+  border-radius: 10px;
+  padding: 15px;
+  margin: 10px 0;
   cursor: pointer;
   font-size: 14px;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
+
+.add-to-cart-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.plus-circle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  border-radius: 50%;
+  width: 18px;
+  height: 18px;
+  padding: 1px;
+  background-color: #e63946;
+  color: #fff;
+}
+
 
 .view-product-button:hover,
 .add-to-cart-button:hover {
@@ -573,7 +595,7 @@
 
 .view-all-btn {
   width: 305px;
-  height: 64px;
+  height: 54px;
   border-radius: 10px;
   display: flex;
   gap: 10px;
@@ -581,14 +603,14 @@
   justify-content: center;
   align-items: center;
   cursor: pointer;
-  background-color: #fff;
+  background-color: #e63946;
   border: 1px solid #e63946;
-  color: #e63946;
+  color: #ffffff;
 }
 
 .view-all-btn:hover {
-  background-color: #fb373e;
-  color: #fff;
+  background-color: #fd4d4d;
+  color: #ffffff;
 }
 
 .image-indicator {
