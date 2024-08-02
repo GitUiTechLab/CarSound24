@@ -8,9 +8,9 @@ const ContactMap = () => {
   return (
     <div className="contact-map">
       <div className="contact-details">
-        <p><img src={MessageIcon} alt='Message Icon' /><i className="fas fa-envelope"></i> hello@graphicsguruji.com</p>
-        <p><img src={MobileIcon} alt='Mobile Icon' /><i className="fas fa-phone"></i> +91 123 456 7890</p>
-        <p><img src={LocationIcon} alt='Location Icon' /><i className="fas fa-map-marker-alt"></i> 0123 Add Your Location City Name, IN 123456</p>
+        <p><img src={MessageIcon} alt='Message Icon' />hello@graphicsguruji.com</p>
+        <p><img src={MobileIcon} alt='Mobile Icon' />+91 123 456 7890</p>
+        <p><img src={LocationIcon} alt='Location Icon' />0123 Add Your Location City Name, IN 123456</p>
       </div>
       <div className="map">
         <iframe 

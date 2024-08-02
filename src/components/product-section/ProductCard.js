@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import '../../css/Homepage.css';
 import '@fortawesome/fontawesome-free/css/all.min.css'; // Ensure Font Awesome CSS is imported
+import '../product-section/Product.css';
 
 const ProductCard = ({ product }) => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);

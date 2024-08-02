@@ -6,9 +6,9 @@ import Mail from "../../assets/mail.png";
 import Instagram from "../../assets/instagram.png";
 import Facebook from "../../assets/facebook.png";
 
-const Footer = () => {
+const Footer = React.forwardRef((props, ref) => {
     return (
-        <footer className="footer">
+        <footer className="footer" ref={ref}>
             <div className="footer-content">
                 <div className="footer-section about">
                     <img src={Logo} alt="Car Sound 24" className="logo" />
@@ -25,87 +25,53 @@ const Footer = () => {
                 <div className="footer-section links">
                     <h3>Quick Links</h3>
                     <ul>
-                        <li>
-                            <a href="#">Link</a>
-                        </li>
-                        <li>
-                            <a href="#">Link</a>
-                        </li>
-                        <li>
-                            <a href="#">Link</a>
-                        </li>
-                        <li>
-                            <a href="#">Link</a>
-                        </li>
-                        <li>
-                            <a href="#">Link</a>
-                        </li>
+                        <li><a href="#">Link</a></li>
+                        <li><a href="#">Link</a></li>
+                        <li><a href="#">Link</a></li>
+                        <li><a href="#">Link</a></li>
+                        <li><a href="#">Link</a></li>
                     </ul>
                 </div>
 
                 <div className="footer-section links">
                     <h3>Categories</h3>
                     <ul>
-                        <li>
-                            <a href="#">Link</a>
-                        </li>
-                        <li>
-                            <a href="#">Link</a>
-                        </li>
-                        <li>
-                            <a href="#">Link</a>
-                        </li>
-                        <li>
-                            <a href="#">Link</a>
-                        </li>
-                        <li>
-                            <a href="#">Link</a>
-                        </li>
+                        <li><a href="#">Link</a></li>
+                        <li><a href="#">Link</a></li>
+                        <li><a href="#">Link</a></li>
+                        <li><a href="#">Link</a></li>
+                        <li><a href="#">Link</a></li>
                     </ul>
                 </div>
 
                 <div className="footer-section links">
                     <h3>Other Useful Links</h3>
                     <ul>
-                        <li>
-                            <a href="#">Link</a>
-                        </li>
-                        <li>
-                            <a href="#">Link</a>
-                        </li>
-                        <li>
-                            <a href="#">Link</a>
-                        </li>
-                        <li>
-                            <a href="#">Link</a>
-                        </li>
-                        <li>
-                            <a href="#">Link</a>
-                        </li>
+                        <li><a href="#">Link</a></li>
+                        <li><a href="#">Link</a></li>
+                        <li><a href="#">Link</a></li>
+                        <li><a href="#">Link</a></li>
+                        <li><a href="#">Link</a></li>
                     </ul>
                 </div>
 
                 <div className="footer-section contact">
                     <div className="cnt-head">Follow Us On</div>
                     <div className="cnt-socials">
-                        <a href="#">
-                            <img src={Instagram} alt="" />
-                        </a>
-                        <a href="#">
-                            <img src={Facebook} alt="" />
-                        </a>
+                        <a href="#"><img src={Instagram} alt="Instagram" /></a>
+                        <a href="#"><img src={Facebook} alt="Facebook" /></a>
                     </div>
                     <div className="cnt-phone">
-                        <img src={Call} alt="" /> (252) 555-0126
+                        <img src={Call} alt="Call" /> (252) 555-0126
                     </div>
                     <div className="cnt-mail">
-                        <img src={Mail} alt="" />
+                        <img src={Mail} alt="Mail" />
                         alma.lawson@example.com
                     </div>
                 </div>
             </div>
         </footer>
     );
-};
+});
 
 export default Footer;

@@ -1,11 +1,17 @@
 import React from "react";
-import "../../css/Homepage.css";
 import Call from "../../assets/call.png";
 import Mail from "../../assets/mail.png";
 import Cart from "../../assets/cart.png";
 import User from "../../assets/user.png";
+import { useNavigate } from "react-router-dom";
+import "../header-section/Header.css";
 
 function Header() {
+    const navigate = useNavigate();
+
+    const handleSignUp = () => {
+        navigate("/signup");
+    };
     return (
         <header className="header-wrapper">
             <div className="header-top">
@@ -24,7 +30,7 @@ function Header() {
                         <img src={Cart} alt="Cart" />
                         <div>Cart</div>
                     </div>
-                    <div className="header-login">
+                    <div onClick={handleSignUp} className="header-login">
                         <img src={User} alt="User" />
                         <div>Sign Up/Sign In</div>
                     </div>

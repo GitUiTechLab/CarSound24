@@ -1,0 +1,28 @@
+.contactus-page {
+    margin-top: 60px;
+}
+
+.new-sub-header {
+    position: relative;
+}
+
+.new-sub-header .nav-link {
+    color: #000000;
+}
+
+.new-sub-header .shop-link {
+    color: #000000;
+}
+
+.new-sub-header .search-bar input {
+    background-color: #F5F5F5;
+    color: #000;
+}
+
+.new-sub-header .search-bar button {
+    background-color: #000;
+}
+
+.new-sub-header .search-bar button .search-icon {
+    color: #ffffff;
+}

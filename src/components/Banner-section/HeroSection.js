@@ -4,14 +4,16 @@ import DownArrow from "../DownArrow";
 import Call from "../../assets/call.png";
 import SideArrow from "../../assets/arrow.png";
 
-function HeroSection() {
+function HeroSection({ footerRef }) {
     const [arrowDirection, setArrowDirection] = useState("down");
 
     const handleArrowClick = () => {
         if (arrowDirection === "down") {
-            window.scrollTo({ top: window.innerHeight, behavior: "smooth" });
+            // Scroll to the footer
+            footerRef.current.scrollIntoView({ behavior: "smooth" });
             setArrowDirection("up");
         } else {
+            // Scroll back to the top
             window.scrollTo({ top: 0, behavior: "smooth" });
             setArrowDirection("down");
         }
@@ -39,7 +41,7 @@ function HeroSection() {
                     </div>
                 </div>
                 <DownArrow
-                    direction={arrowDirection}
+                    direction="down"
                     onClick={handleArrowClick}
                 />
             </div>

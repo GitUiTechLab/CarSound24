@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import "@fontsource/lato";
 import "./App.css";
 import Header from "./components/header-section/Header";
@@ -9,11 +9,11 @@ import About from "./components/about-section/About";
 import Product from "./components/product-section/Product";
 import Contact from "./components/contact-section/Contact";
 import Footer from "./components/footer-section/Footer";
-import Slider from './components/testimonial-section/Slider';
 import TestimonialSection from './components/testimonial-section/TestimonialSection';
 
 function Main() {
   const [isScrolled, setIsScrolled] = useState(false);
+  const footerRef = useRef(null);
 
   const handleScroll = () => {
     setIsScrolled(window.scrollY > 0);
@@ -28,13 +28,13 @@ function Main() {
     <div>
       <Header />
       <SubHeader isScrolled={isScrolled} />
-      <HeroSection />
+      <HeroSection footerRef={footerRef} />
       <Category />
       <About />
       <Product />
       <TestimonialSection />
       <Contact />
-      <Footer />
+      <Footer ref={footerRef} />
     </div>
   );
 }

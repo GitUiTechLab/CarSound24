@@ -17,6 +17,7 @@ function About() {
                 className="about-underline"
             />
             <div className="benefits">
+                {/* <div className="benifit-wrapper" ></div> */}
                 <div className="benefit-item">
                     <img
                         src={Truck}
