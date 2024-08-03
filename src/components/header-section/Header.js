@@ -4,14 +4,19 @@ import Mail from "../../assets/mail.png";
 import Cart from "../../assets/cart.png";
 import User from "../../assets/user.png";
 import { useNavigate } from "react-router-dom";
+import { IoIosArrowDown } from "react-icons/io";
 import "../header-section/Header.css";
 
-function Header() {
+function Header({styleNavbar}) {
     const navigate = useNavigate();
 
     const handleSignUp = () => {
         navigate("/signup");
     };
+
+    const handleUserSignIn = () => {
+        console.log("User Sign In Successful");
+    }
     return (
         <header className="header-wrapper">
             <div className="header-top">
@@ -25,7 +30,7 @@ function Header() {
                         <span>alma.lawson@example.com</span>
                     </div>
                 </div>
-                <div className="user-actions">
+                <div className={`user-actions ${styleNavbar}`}>
                     <div className="header-cart">
                         <img src={Cart} alt="Cart" />
                         <div>Cart</div>
@@ -34,6 +39,12 @@ function Header() {
                         <img src={User} alt="User" />
                         <div>Sign Up/Sign In</div>
                     </div>
+                    <div onClick={handleUserSignIn} className="header-User-Signin">
+                        <img src={User} alt="User" />
+                        <div>Username</div>
+                        <IoIosArrowDown />
+                    </div>
+
                 </div>
             </div>
         </header>

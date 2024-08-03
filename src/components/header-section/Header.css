@@ -27,10 +27,6 @@
     margin-left: 20px;
 }
 
-.header-login {
-    margin-right: 20px;
-}
-
 .contact-info, .user-actions {
     display: flex;
     align-items: center;
@@ -39,7 +35,7 @@
 
 .header-cart {
     border: 2px solid #F5F5F5;
-    border-radius: 10px;
+    border-radius: 20px;
     padding: 5px 10px;
     cursor: pointer;
 }
@@ -53,6 +49,18 @@
     cursor: pointer;
 }
 
+.header-User-Signin {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    background-color: var(--color-white);
+    color: #000;
+    border-radius: 20px;
+    padding: 6px 15px;
+    margin-right: 75px;
+    cursor: pointer;
+}
 .nav {
     display: flex;
     justify-content: space-between;
@@ -151,6 +159,7 @@
     color: #ffffff;
     font-size: 16px;
     font-weight: 700;
+    cursor: pointer;
 }
 
 .nav-arrow {

@@ -16,6 +16,10 @@ function SubHeader({ isScrolled, styleHeader }) {
     const handleLogoClick = () => {
         navigate("/");
     };
+
+    const handleProfile = () => {
+        navigate("/profile");
+    }
     return (
         <header className={`sub-header ${styleHeader} ${isScrolled ? "scrolled" : ""}`}>
             <nav className="nav">
@@ -32,7 +36,7 @@ function SubHeader({ isScrolled, styleHeader }) {
                 </div>
                 <div className="nav-links">
                     <a
-                        href="#shop"
+                        onClick={handleProfile}
                         className={`shop-link ${isScrolled ? "scrolled" : ""}`}
                     >
                         Shop by category
