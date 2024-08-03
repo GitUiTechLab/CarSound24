@@ -15,7 +15,8 @@ function Header({styleNavbar}) {
     };
 
     const handleUserSignIn = () => {
-        console.log("User Sign In Successful");
+        // console.log("User Sign In Successful");
+        navigate("/rating");
     }
     return (
         <header className="header-wrapper">
