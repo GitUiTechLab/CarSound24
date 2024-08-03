@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { GoogleOAuthProvider, GoogleLogin } from "@react-oauth/google";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
 import "../signup-page/SignUp.css";
 import Header from "../header-section/Header";
 import SubHeader from "../header-section/SubHeader";
@@ -14,6 +16,16 @@ function SignUp() {
     const [mobile, setMobile] = useState("");
     const [confirmPassword, setConfirmPassword] = useState("");
     const [errors, setErrors] = useState({});
+    const [showPassword, setShowPassword] = useState(false);
+    const [showConfirmPassword, setShowConfirmPassword] = useState(false);
+
+    const togglePasswordVisibility = () => {
+        setShowPassword(!showPassword);
+    };
+
+    const toggleConfirmPasswordVisibility = () => {
+        setShowConfirmPassword(!showConfirmPassword);
+    };
 
     const validateSignInForm = () => {
         const newErrors = {};
@@ -57,72 +69,76 @@ function SignUp() {
         <GoogleOAuthProvider clientId="YOUR_GOOGLE_CLIENT_ID">
             <div>
                 <Header />
-                <SubHeader />
+                <SubHeader styleHeader={"new-sub-header"} />
                 <div className="auth-container">
                     {isSignIn ? (
                         <div className="auth-content">
-                            <div className="auth-form">
-                                <h2>Welcome Back to CAR SOUND 24</h2>
-                                <p>
-                                    Stay connected with the best in car audio
-                                    accessories.
-                                </p>
-                                <div className="auth-header">
-                                    <button
-                                        onClick={() => setIsSignIn(true)}
-                                        className={isSignIn ? "active" : ""}
-                                    >
-                                        Sign In
-                                    </button>
-                                    <button
-                                        onClick={() => setIsSignIn(false)}
-                                        className={!isSignIn ? "active" : ""}
-                                    >
-                                        Sign Up
-                                    </button>
-                                </div>
-                                <form onSubmit={handleSignInSubmit}>
-                                    <div>
-                                        <label>Email</label>
-                                    <input
-                                        type="email"
-                                        placeholder="Email"
-                                        value={email}
-                                        onChange={(e) =>
-                                            setEmail(e.target.value)
-                                        }
-                                    />
-                                    {errors.email && (
-                                        <span className="error">
-                                            {errors.email}
-                                        </span>
-                                    )}
+                            <div className="auth-form-container">
+                                <div className="auth-form">
+                                    <h2>Welcome Back to CAR SOUND 24</h2>
+                                    <p>Stay connected with the best in car audio accessories.</p>
+                                    <div className="auth-header">
+                                        <button
+                                            onClick={() => setIsSignIn(true)}
+                                            className={isSignIn ? "active" : ""}
+                                        >
+                                            Sign In
+                                        </button>
+                                        <button
+                                            onClick={() => setIsSignIn(false)}
+                                            className={!isSignIn ? "active" : ""}
+                                        >
+                                            Sign Up
+                                        </button>
                                     </div>
-                                    <div>
-                                        <div>
-                                            <label>Password</label>
-                                            <span>Forgot Password</span>
+                                    <form onSubmit={handleSignInSubmit}>
+                                        <div className="input-container">
+                                            <label>Email</label>
+                                            <input
+                                                type="email"
+                                                placeholder="alma.lawson@example.com"
+                                                value={email}
+                                                onChange={(e) => setEmail(e.target.value)}
+                                            />
+                                            {errors.email && (
+                                                <span className="error">{errors.email}</span>
+                                            )}
                                         </div>
-                                    <input
-                                        type="password"
-                                        placeholder="Password"
-                                        value={password}
-                                        onChange={(e) =>
-                                            setPassword(e.target.value)
-                                        }
-                                    />
-                                    {errors.password && (
-                                        <span className="error">
-                                            {errors.password}
-                                        </span>
-                                    )}
+                                        <div className="input-container">
+                                            <div className="forgot-container">
+                                                <label>Password</label>
+                                                <span>Forgot Password</span>
+                                            </div>
+                                            <div className="password-container">
+                                                <input
+                                                    type={showPassword ? "text" : "password"}
+                                                    placeholder="Password"
+                                                    value={password}
+                                                    onChange={(e) => setPassword(e.target.value)}
+                                                />
+                                                <FontAwesomeIcon
+                                                    icon={showPassword ? faEyeSlash : faEye}
+                                                    onClick={togglePasswordVisibility}
+                                                    className="password-icon"
+                                                />
+                                            </div>
+                                            {errors.password && (
+                                                <span className="error">{errors.password}</span>
+                                            )}
+                                        </div>
+                                        <button type="submit">Sign In</button>
+                                        <div className="hr-text">
+                                            <span>Or</span>
+                                        </div>
+                                    </form>
+                                    <div className="google-container">
+                                        <GoogleLogin
+                                            onSuccess={handleGoogleSuccess}
+                                            onFailure={handleGoogleSuccess}
+                                            className="google-auth"
+                                        />
                                     </div>
-                                    <button type="submit">Sign In</button>
-                                </form>
-                                <GoogleLogin
-                                    onSuccess={handleGoogleSuccess}
-                                    onFailure={handleGoogleSuccess}
-                                />
+                                </div>
                             </div>
                             <div className="auth-image">
                                 <img src={SignInImg} alt="Car Sound" />
@@ -130,85 +146,105 @@ function SignUp() {
                         </div>
                     ) : (
                         <div className="auth-content">
-                            <div className="auth-form">
-                                <h2>Join Car Sound 24</h2>
-                                <p>
-                                    Stay Tuned with the Latest in Car Audio -
-                                    Join Car Sound 24
-                                </p>
-                                <div className="auth-header">
-                                    <button
-                                        onClick={() => setIsSignIn(true)}
-                                        className={isSignIn ? "active" : ""}
-                                    >
-                                        Sign In
-                                    </button>
-                                    <button
-                                        onClick={() => setIsSignIn(false)}
-                                        className={!isSignIn ? "active" : ""}
-                                    >
-                                        Sign Up
-                                    </button>
+                            <div className="auth-form-container">
+                                <div className="auth-form">
+                                    <h2>Join Car Sound 24</h2>
+                                    <p>Stay Tuned with the Latest in Car Audio - Join Car Sound 24</p>
+                                    <div className="auth-header">
+                                        <button
+                                            onClick={() => setIsSignIn(true)}
+                                            className={isSignIn ? "active" : ""}
+                                        >
+                                            Sign In
+                                        </button>
+                                        <button
+                                            onClick={() => setIsSignIn(false)}
+                                            className={!isSignIn ? "active" : ""}
+                                        >
+                                            Sign Up
+                                        </button>
+                                    </div>
+                                    <form onSubmit={handleSignUpSubmit}>
+                                        <div className="signup-container">
+                                            <div className="input-container">
+                                                <label>Email</label>
+                                                <input
+                                                    type="email"
+                                                    placeholder="Email"
+                                                    value={email}
+                                                    onChange={(e) => setEmail(e.target.value)}
+                                                />
+                                                {errors.email && (
+                                                    <span className="error">{errors.email}</span>
+                                                )}
+                                            </div>
+                                            <div className="input-container">
+                                                <label>Mobile</label>
+                                                <input
+                                                    type="text"
+                                                    placeholder="Mobile"
+                                                    value={mobile}
+                                                    onChange={(e) => setMobile(e.target.value)}
+                                                />
+                                                {errors.mobile && (
+                                                    <span className="error">{errors.mobile}</span>
+                                                )}
+                                            </div>
+                                        </div>
+                                        <div className="signup-container">
+                                            <div className="input-container">
+                                                <label>Password</label>
+                                                <div className="password-container">
+                                                    <input
+                                                        type={showPassword ? "text" : "password"}
+                                                        placeholder="Password"
+                                                        value={password}
+                                                        onChange={(e) => setPassword(e.target.value)}
+                                                    />
+                                                    <FontAwesomeIcon
+                                                        icon={showPassword ? faEyeSlash : faEye}
+                                                        onClick={togglePasswordVisibility}
+                                                        className="password-icon"
+                                                    />
+                                                </div>
+                                                {errors.password && (
+                                                    <span className="error">{errors.password}</span>
+                                                )}
+                                            </div>
+                                            <div className="input-container">
+                                                <label>Confirm Password</label>
+                                                <div className="password-container">
+                                                    <input
+                                                        type={showConfirmPassword ? "text" : "password"}
+                                                        placeholder="Confirm Password"
+                                                        value={confirmPassword}
+                                                        onChange={(e) => setConfirmPassword(e.target.value)}
+                                                    />
+                                                    <FontAwesomeIcon
+                                                        icon={showConfirmPassword ? faEyeSlash : faEye}
+                                                        onClick={toggleConfirmPasswordVisibility}
+                                                        className="password-icon"
+                                                    />
+                                                </div>
+                                                {errors.confirmPassword && (
+                                                    <span className="error">{errors.confirmPassword}</span>
+                                                )}
+                                            </div>
+                                        </div>
+                                        <button type="submit">Sign Up</button>
+                                        <div className="hr-text">
+                                            <span>Or</span>
+                                        </div>
+                                    </form>
+                                    <div className="google-container">
+                                        <GoogleLogin
+                                            onSuccess={handleGoogleSuccess}
+                                            onFailure={handleGoogleSuccess}
+                                            className="google-auth"
+                                        />
+                                    </div>
+                                    <div className="terms-conditions">By signing up you are agree to our <span>terms n conditions</span></div>
                                 </div>
-                                <form onSubmit={handleSignUpSubmit}>
-                                    <input
-                                        type="email"
-                                        placeholder="Email"
-                                        value={email}
-                                        onChange={(e) =>
-                                            setEmail(e.target.value)
-                                        }
-                                    />
-                                    {errors.email && (
-                                        <span className="error">
-                                            {errors.email}
-                                        </span>
-                                    )}
-                                    <input
-                                        type="text"
-                                        placeholder="Mobile"
-                                        value={mobile}
-                                        onChange={(e) =>
-                                            setMobile(e.target.value)
-                                        }
-                                    />
-                                    {errors.mobile && (
-                                        <span className="error">
-                                            {errors.mobile}
-                                        </span>
-                                    )}
-                                    <input
-                                        type="password"
-                                        placeholder="Password"
-                                        value={password}
-                                        onChange={(e) =>
-                                            setPassword(e.target.value)
-                                        }
-                                    />
-                                    {errors.password && (
-                                        <span className="error">
-                                            {errors.password}
-                                        </span>
-                                    )}
-                                    <input
-                                        type="password"
-                                        placeholder="Confirm Password"
-                                        value={confirmPassword}
-                                        onChange={(e) =>
-                                            setConfirmPassword(e.target.value)
-                                        }
-                                    />
-                                    {errors.confirmPassword && (
-                                        <span className="error">
-                                            {errors.confirmPassword}
-                                        </span>
-                                    )}
-                                    <button type="submit">Sign Up</button>
-                                </form>
-                                <GoogleLogin
-                                    onSuccess={handleGoogleSuccess}
-                                    onFailure={handleGoogleSuccess}
-                                />
                             </div>
                             <div className="auth-image">
                                 <img src={SignInImg} alt="Car Sound" />
