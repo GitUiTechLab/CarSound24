@@ -8,6 +8,7 @@ import SignUp from "./components/signup-page/SignUp";
 import ContactUsPage from "./components/contact-section/ContactUsPage";
 import Profile from "./components/profile-page/Profile";
 import Rating from "./components/order-section/rating/Rating";
+import EmptyCart from "./components/order-section/cart/EmptyCart";
 
 function App() {
     return (
@@ -20,6 +21,7 @@ function App() {
                 <Route path="/contactus" element={<ContactUsPage />} />
                 <Route path="/profile" element={<Profile />} />
                 <Route path="/rating" element={<Rating />} />
+                <Route path="/emptycart" element={<EmptyCart />} />
             </Routes>
         </BrowserRouter>
     );

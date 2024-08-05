@@ -2,27 +2,28 @@
     margin-top: 60px;
 }
 
-.new-sub-header {
+.new-subheader {
     position: relative;
+    box-shadow: 0px 4px 40px 0px #0000000D;
 }
 
-.new-sub-header .nav-link {
+.new-subheader .nav-link {
     color: #000000;
 }
 
-.new-sub-header .shop-link {
+.new-subheader .shop-link {
     color: #000000;
 }
 
-.new-sub-header .search-bar input {
+.new-subheader .search-bar input {
     background-color: #F5F5F5;
     color: #000;
 }
 
-.new-sub-header .search-bar button {
+.new-subheader .search-bar button {
     background-color: #000;
 }
 
-.new-sub-header .search-bar button .search-icon {
+.new-subheader .search-bar button .search-icon {
     color: #ffffff;
 }

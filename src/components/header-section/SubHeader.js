@@ -1,6 +1,5 @@
 import React from "react";
 import logo from "../../assets/logo.png";
-// import Search from "../../assets/search.png";
 import { IoSearchOutline } from "react-icons/io5";
 import { IoMdArrowDropdown } from "react-icons/io";
 import { useNavigate } from "react-router-dom";
@@ -19,7 +18,8 @@ function SubHeader({ isScrolled, styleHeader }) {
 
     const handleProfile = () => {
         navigate("/profile");
-    }
+    };
+
     return (
         <header className={`sub-header ${styleHeader} ${isScrolled ? "scrolled" : ""}`}>
             <nav className="nav">

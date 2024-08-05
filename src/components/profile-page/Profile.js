@@ -66,7 +66,7 @@ function Profile() {
     return (
         <div>
             <Header styleNavbar={"new-navbar"} />
-            <SubHeader styleHeader={"new-sub-header"} />
+            <SubHeader styleHeader={"new-subheader"} />
             <div className="profile-container">
                 <h2>My Profile</h2>
                 <div className="profile-form">
@@ -149,7 +149,7 @@ function Profile() {
                                 <FontAwesomeIcon
                                     icon={showPassword ? faEyeSlash : faEye}
                                     onClick={togglePasswordVisibility}
-                                    className="password-icon"
+                                    className="passwordIcon"
                                 />
                                 {errors.password && (
                                     <span className="error">
@@ -176,7 +176,7 @@ function Profile() {
                                         showConfirmPassword ? faEyeSlash : faEye
                                     }
                                     onClick={toggleConfirmPasswordVisibility}
-                                    className="password-icon"
+                                    className="passwordIcon"
                                 />
                                 {errors.confirmPassword && (
                                     <span className="error">

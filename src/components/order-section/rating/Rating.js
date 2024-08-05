@@ -24,7 +24,7 @@ function Rating() {
             <SubHeader styleHeader={"new-sub-header"} />
             <div className="review-form-container">
                 <h2>Rate this Product</h2>
-                <div className="stars">
+                <div className="rate-stars">
                     {[...Array(5)].map((star, index) => {
                         index += 1;
                         return (

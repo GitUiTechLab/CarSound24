@@ -14,6 +14,10 @@ function Header({styleNavbar}) {
         navigate("/signup");
     };
 
+    const handleCart = () => {
+        navigate("/emptycart");
+    };
+
     const handleUserSignIn = () => {
         // console.log("User Sign In Successful");
         navigate("/rating");
@@ -32,7 +36,7 @@ function Header({styleNavbar}) {
                     </div>
                 </div>
                 <div className={`user-actions ${styleNavbar}`}>
-                    <div className="header-cart">
+                    <div onClick={handleCart} className="header-cart">
                         <img src={Cart} alt="Cart" />
                         <div>Cart</div>
                     </div>

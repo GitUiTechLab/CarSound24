@@ -18,6 +18,10 @@
   .product-head {
     text-align: center;
     padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
   
   .product-head h2 {

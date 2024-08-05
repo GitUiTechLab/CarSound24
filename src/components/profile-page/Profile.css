@@ -1,15 +1,19 @@
 .profile-container {
     display: flex;
+    flex-direction: column;
     justify-content: start;
     align-items: center;
     background: #FCE8E9;
     margin-top: 60px;
     width: 100%;
-    height: 800px; 
+    height: 900px; 
 }
 
 .profile-container h2 {
-    padding: 10px;
+    padding: 20px;
+    font-size: 21px;
+    font-weight: 700;
+    margin-top: 20px;
 }
 
 .profile-form {
@@ -79,12 +83,13 @@
     color: #666666;
 }
 
-.password-icon {
+.passwordIcon {
     position: absolute;
-    right: -5px;
-    top: 43px;
+    right: 10px;
+    top: 62px;
     transform: translateY(-50%);
     cursor: pointer;
+    color: #666666;
 }
 
 .error {
@@ -113,30 +118,31 @@
     margin-left: 142px;
 }
 
-.new-sub-header {
+.new-subheader {
     position: relative;
     background-color: #fff; 
     z-index: 1;
+    box-shadow: 0px 4px 40px 0px #0000000D;
 }
 
-.new-sub-header .nav-link {
+.new-subheader .nav-link {
     color: #000000;
 }
 
-.new-sub-header .shop-link {
+.new-subheader .shop-link {
     color: #000000;
 }
 
-.new-sub-header .search-bar input {
+.new-subheader .search-bar input {
     background-color: #F5F5F5;
     color: #000;
 }
 
-.new-sub-header .search-bar button {
+.new-subheader .search-bar button {
     background-color: #000;
 }
 
-.new-sub-header .search-bar button .search-icon {
+.new-subheader .search-bar button .search-icon {
     color: #ffffff;
 }
 

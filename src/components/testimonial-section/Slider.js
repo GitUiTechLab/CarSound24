@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import PrevArrow from "../../assets/prev-arrow.png";
 import NextArrow from "../../assets/next-arrow.png";
-import "../../css/Homepage.css";
+import "./Testimonial.css";
 
 const Slider = ({ testimonials }) => {
     const [currentIndex, setCurrentIndex] = useState(0);
@@ -32,16 +32,16 @@ const Slider = ({ testimonials }) => {
             </button>
             <div className="testimonial-card-container">
                 <div className="testimonial-card">
-                    <div className="card-header">
-                        <div className="profile-container">
-                            <div className="profile-details">
-                                <h3 className="name">
+                    <div className="cardHeader">
+                        <div className="profileContainer">
+                            <div className="profileDetails">
+                                <h3 className="name-role">
                                     {testimonials[currentIndex].name}
                                 </h3>
-                                <p className="position">
+                                <p className="position-role">
                                     {testimonials[currentIndex].position}
                                 </p>
-                                <div className="stars">
+                                <div className="stars-role">
                                     {renderStars(
                                         testimonials[currentIndex].rating
                                     )}
@@ -49,44 +49,44 @@ const Slider = ({ testimonials }) => {
                             </div>
                         </div>
                         <img
-                            className="profile-image"
+                            className="profileImage"
                             src={testimonials[currentIndex].image}
                             alt={testimonials[currentIndex].name}
                         />
                     </div>
-                    <p className="card-text">
+                    <p className="cardText">
                         {testimonials[currentIndex].text}
                     </p>
                 </div>
                 <div className="testimonial-card">
-                    <div className="card-header">
-                        <div className="profile-container">
-                            <div className="profile-details">
-                            <h3 className="name">
-                                {
-                                    testimonials[
-                                        (currentIndex + 1) % testimonials.length
-                                    ].name
-                                }
-                            </h3>
-                            <p className="position">
-                                {
-                                    testimonials[
-                                        (currentIndex + 1) % testimonials.length
-                                    ].position
-                                }
-                            </p>
-                            <div className="stars">
-                                {renderStars(
-                                    testimonials[
-                                        (currentIndex + 1) % testimonials.length
-                                    ].rating
-                                )}
-                            </div>
+                    <div className="cardHeader">
+                        <div className="profileContainer">
+                            <div className="profileDetails">
+                                <h3 className="name-role">
+                                    {
+                                        testimonials[
+                                            (currentIndex + 1) % testimonials.length
+                                        ].name
+                                    }
+                                </h3>
+                                <p className="position-role">
+                                    {
+                                        testimonials[
+                                            (currentIndex + 1) % testimonials.length
+                                        ].position
+                                    }
+                                </p>
+                                <div className="stars-role">
+                                    {renderStars(
+                                        testimonials[
+                                            (currentIndex + 1) % testimonials.length
+                                        ].rating
+                                    )}
+                                </div>
                             </div>
                         </div>
                         <img
-                            className="profile-image"
+                            className="profileImage"
                             src={
                                 testimonials[
                                     (currentIndex + 1) % testimonials.length
@@ -99,7 +99,7 @@ const Slider = ({ testimonials }) => {
                             }
                         />
                     </div>
-                    <p className="card-text">
+                    <p className="cardText">
                         {
                             testimonials[
                                 (currentIndex + 1) % testimonials.length

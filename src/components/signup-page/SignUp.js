@@ -2,12 +2,12 @@ import React, { useState } from "react";
 import { GoogleOAuthProvider, GoogleLogin } from "@react-oauth/google";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
-import "../signup-page/SignUp.css";
 import Header from "../header-section/Header";
 import SubHeader from "../header-section/SubHeader";
 import Contact from "../contact-section/Contact";
 import Footer from "../footer-section/Footer";
 import SignInImg from "../../assets/signin.png";
+import "../signup-page/SignUp.css";
 
 function SignUp() {
     const [isSignIn, setIsSignIn] = useState(true);
@@ -69,7 +69,7 @@ function SignUp() {
         <GoogleOAuthProvider clientId="YOUR_GOOGLE_CLIENT_ID">
             <div>
                 <Header />
-                <SubHeader styleHeader={"new-sub-header"} />
+                <SubHeader styleHeader={"new-subheader"} />
                 <div className="auth-container">
                     {isSignIn ? (
                         <div className="auth-content">
