@@ -90,7 +90,7 @@ function Category() {
                 {categories.map((category) => (
                     <div
                         key={category.id}
-                        className={`category-item ${
+                        className={`categoryItem ${
                             selectedCategory === category.id ? "selected" : ""
                         }`}
                         onClick={() => handleClick(category.id)}
@@ -98,7 +98,7 @@ function Category() {
                         <img
                             src={category.image}
                             alt={category.name}
-                            className="category-image"
+                            className="categoryImg"
                         />
                         <p>{category.name}</p>
                     </div>

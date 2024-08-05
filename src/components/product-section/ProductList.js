@@ -1,11 +1,8 @@
-import React from "react";
-import ProductCard from "./ProductCard";
+import React from 'react';
+import ProductCard from './ProductCard';
 import productImage from "../../assets/prod-1.png"; 
 import heartIcon from "../../assets/heart.png";
-import Underline from "../../assets/underline.png";
-import Arrow from "../../assets/arrow.png";
-import { useNavigate } from "react-router-dom";
-import '../product-section/Product.css';
+import './Product.css';
 
 const products = [
     {
@@ -102,30 +99,16 @@ const products = [
     // Add more products as needed...
 ];
 
-function Product() {
-    const navigate = useNavigate();
+const ProductList = () => {
+  return (
+    <div className="product-list-container">
+      <div className="products">
+        {products.slice(0, 9).map(product => (
+          <ProductCard key={product.id} product={product} />
+        ))}
+      </div>
+    </div>
+  );
+};
 
-    const handleViewAll = () => {
-        navigate("/productpage");
-    };
-    return (
-        <div className="product-card-container">
-            <div className="product-head">
-                <h2>
-                    View our <span>Products</span>
-                </h2>
-                <img src={Underline} alt="Underline" className="product-underline" />
-            </div>
-            <div className="product-list">
-                {products.slice(0, 12).map((product) => (
-                    <ProductCard key={product.id} product={product} />
-                ))}
-            </div>
-            <div className="view-all-container">
-              <button onClick={handleViewAll} className="view-all-btn">View All <img src={Arrow} alt="Arrow" /></button>
-            </div>
-        </div>
-    );
-}
-
-export default Product;
+export default ProductList;

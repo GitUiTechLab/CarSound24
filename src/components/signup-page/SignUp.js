@@ -7,6 +7,7 @@ import SubHeader from "../header-section/SubHeader";
 import Contact from "../contact-section/Contact";
 import Footer from "../footer-section/Footer";
 import SignInImg from "../../assets/signin.png";
+import SignUpImg from "../../assets/signup.jpeg";
 import "../signup-page/SignUp.css";
 
 function SignUp() {
@@ -247,7 +248,7 @@ function SignUp() {
                                 </div>
                             </div>
                             <div className="auth-image">
-                                <img src={SignInImg} alt="Car Sound" />
+                                <img src={SignUpImg} alt="Car Sound" />
                             </div>
                         </div>
                     )}
