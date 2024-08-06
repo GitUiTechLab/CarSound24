@@ -24,7 +24,7 @@ function ProductPage() {
                             <option>Price: High to Low</option>
                         </select>
                     </div>
-                </div>
+                </div>  
                 <div className="content">
                     <ProductFilters />
                     <ProductList />
