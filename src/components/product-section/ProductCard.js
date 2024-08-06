@@ -1,10 +1,17 @@
 import React, { useState } from 'react';
-import '@fortawesome/fontawesome-free/css/all.min.css'; // Ensure Font Awesome CSS is imported
+import '@fortawesome/fontawesome-free/css/all.min.css';
+import { useNavigate } from "react-router-dom"; 
 import '../product-section/Product.css';
+
 
 const ProductCard = ({ product }) => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  const [isFavorited, setIsFavorited] = useState(false); // State to track favorite status
+  const [isFavorited, setIsFavorited] = useState(false); 
+  const navigate = useNavigate();
+
+  const handleViewProduct = () => {
+      navigate("/productdetails");
+  };
 
   const nextImage = () => {
     if (product.images && product.images.length > 0) {
@@ -40,7 +47,7 @@ const ProductCard = ({ product }) => {
         </div>
       </div>
       <div className="product-buttons">
-        <button className="view-product-button">View Product</button>
+        <button onClick={handleViewProduct} className="view-product-button">View Product</button>
         <button className="add-to-cart-button"><div className='plus-circle'>+</div>Add to Cart</button>
       </div>
       <div className="product-info">
