@@ -1,6 +1,8 @@
 import React, { useState, useEffect, useRef } from "react";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import chatImg from "../../assets/whatsapp.png";
+import { useWishlist } from '../../context/WishlistContext';
+import { useNavigate } from "react-router-dom";
 import "./ProductDetails.css";
 
 const ProdDetails = ({ product }) => {
@@ -8,8 +10,28 @@ const ProdDetails = ({ product }) => {
     const [selectedQuantity, setSelectedQuantity] = useState(1);
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
     const dropdownRef = useRef(null);
+    const navigate = useNavigate();
+
+    const { addToWishlist, removeFromWishlist, wishlist } = useWishlist();
+
+    const addToCart = () => {
+        const cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+        cartItems.push({ ...product, quantity: selectedQuantity });
+        localStorage.setItem('cart', JSON.stringify(cartItems));
+        navigate('/shoppingcart');
+    };
+
+    useEffect(() => {
+        const isInWishlist = wishlist.some(item => item.id === product.id);
+        setIsWishlist(isInWishlist);
+    }, [wishlist, product.id]);
 
     const toggleWishlist = () => {
+        if (isWishlist) {
+            removeFromWishlist(product.id);
+        } else {
+            addToWishlist(product);
+        }
         setIsWishlist(!isWishlist);
     };
 
@@ -106,7 +128,7 @@ const ProdDetails = ({ product }) => {
                         </ul>
                     </div>
                 )}
-                <button className="addtocart-button"><span>+</span>Add to Cart</button>
+                <button className="addtocart-button" onClick={addToCart}><span>+</span>Add to Cart</button>
             </div>
 
             <div className="product-general-specifications">

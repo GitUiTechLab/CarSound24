@@ -9,21 +9,28 @@ import ContactUsPage from "./components/contact-section/ContactUsPage";
 import Profile from "./components/profile-page/Profile";
 import Rating from "./components/order-section/rating/Rating";
 import EmptyCart from "./components/order-section/cart/EmptyCart";
+import { WishlistProvider } from './context/WishlistContext';
+import Wishlist from "./components/wishlist-section/Wishlist";
+import ShoppingCart from "./components/order-section/shopping-cart/ShoppingCart";
 
 function App() {
     return (
-        <BrowserRouter>
-            <Routes>
-                <Route path="/" element={<Main />} />
-                <Route path="/productdetails" element={<ProductDetails />} />
-                <Route path="/productpage" element={<ProductPage />} />
-                <Route path="/signup" element={<SignUp />}/>
-                <Route path="/contactus" element={<ContactUsPage />} />
-                <Route path="/profile" element={<Profile />} />
-                <Route path="/rating" element={<Rating />} />
-                <Route path="/emptycart" element={<EmptyCart />} />
-            </Routes>
-        </BrowserRouter>
+        <WishlistProvider>
+            <BrowserRouter>
+                <Routes>
+                    <Route path="/" element={<Main />} />
+                    <Route path="/productdetails" element={<ProductDetails />} />
+                    <Route path="/productpage" element={<ProductPage />} />
+                    <Route path="/signup" element={<SignUp />} />
+                    <Route path="/contactus" element={<ContactUsPage />} />
+                    <Route path="/profile" element={<Profile />} />
+                    <Route path="/rating" element={<Rating />} />
+                    <Route path="/emptycart" element={<EmptyCart />} />
+                    <Route path="/wishlist" element={<Wishlist />} />
+                    <Route path="/shoppingcart" element={<ShoppingCart />} />
+                </Routes>
+            </BrowserRouter>
+        </WishlistProvider>
     );
 }
 

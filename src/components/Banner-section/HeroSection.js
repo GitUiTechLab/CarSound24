@@ -1,11 +1,21 @@
 import React, { useState } from "react";
-import "../../css/Homepage.css";
 import DownArrow from "../DownArrow";
 import Call from "../../assets/call.png";
 import SideArrow from "../../assets/arrow.png";
+import { useNavigate } from "react-router-dom";
+import "../../css/Homepage.css";
 
 function HeroSection({ footerRef }) {
     const [arrowDirection, setArrowDirection] = useState("down");
+    const navigate = useNavigate();
+
+    const handleWishlist = () => {
+        navigate("/wishlist");
+    };
+
+    const handleContactUs = () => {
+        navigate("/contactus");
+    };
 
     const handleArrowClick = () => {
         if (arrowDirection === "down") {
@@ -30,11 +40,11 @@ function HeroSection({ footerRef }) {
                         any car.
                     </p>
                     <div className="banner-btn">
-                        <button className="contact-button">
+                        <button onClick={handleContactUs} className="contact-button">
                             <img src={Call} alt="Call" />
                             Contact Us
                         </button>
-                        <button className="shop-button">
+                        <button onClick={handleWishlist} className="shop-button">
                             Shop Now
                             <img src={SideArrow} alt="SideArrow" />
                         </button>
