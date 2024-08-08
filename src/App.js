@@ -13,6 +13,7 @@ import { WishlistProvider } from './context/WishlistContext';
 import Wishlist from "./components/wishlist-section/Wishlist";
 import ShoppingCart from "./components/order-section/shopping-cart/ShoppingCart";
 import MyOrders from "./components/order-section/order/MyOrders";
+import OrderDetails from "./components/order-section/order/OrderDetails";
 
 function App() {
     return (
@@ -30,6 +31,7 @@ function App() {
                     <Route path="/wishlist" element={<Wishlist />} />
                     <Route path="/shoppingcart" element={<ShoppingCart />} />
                     <Route path="/myorders" element={<MyOrders />} />
+                    <Route path="order-details" element={<OrderDetails />} />
                 </Routes>
             </BrowserRouter>
         </WishlistProvider>

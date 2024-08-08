@@ -50,6 +50,10 @@ function MyOrders() {
     navigate("/rating");
   };
 
+  const handleViewOrderDetails = () => {
+    navigate("/order-details");
+  }
+
   return (
     <div>
         <Header styleNavbar={"myorders-header"} />
@@ -83,7 +87,7 @@ function MyOrders() {
                                         </>
                                     )}
                                 </div>
-                                <button className='view-order-details'>View Order Details</button>
+                                <button onClick={handleViewOrderDetails} className='view-order-details'>View Order Details</button>
                                 {order.delivered && (
                                     <button onClick={handleRate} className='rate-product'><FaStar />Rate Product</button>
                                 )}
