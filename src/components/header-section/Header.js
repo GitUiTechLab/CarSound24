@@ -1,14 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
-import { IoIosArrowDown } from "react-icons/io";
+import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
+import { BsStack } from "react-icons/bs";
 import { TbLogout2 } from "react-icons/tb";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-    faUser,
-    faBox,
-    faHeart,
-    faSignOutAlt,
-} from "@fortawesome/free-solid-svg-icons";
+import { faUser, faHeart } from "@fortawesome/free-solid-svg-icons";
 import Call from "../../assets/call.png";
 import Mail from "../../assets/mail.png";
 import Cart from "../../assets/cart.png";
@@ -18,10 +14,30 @@ import "../header-section/Header.css";
 function Header({ styleNavbar }) {
     const navigate = useNavigate();
     const [dropdownOpen, setDropdownOpen] = useState(false);
-    const [isLoggedIn, setIsLoggedIn] = useState(true); // Replace this with actual login state
+    const [isLoggedIn, setIsLoggedIn] = useState(
+        JSON.parse(localStorage.getItem("isLoggedIn")) || false
+    );
+    const dropdownRef = useRef(null);
+
+    useEffect(() => {
+        localStorage.setItem("isLoggedIn", JSON.stringify(isLoggedIn));
+    }, [isLoggedIn]);
+
+    useEffect(() => {
+        const handleClickOutside = (event) => {
+            if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+                setDropdownOpen(false);
+            }
+        };
+
+        document.addEventListener("mousedown", handleClickOutside);
+        return () => {
+            document.removeEventListener("mousedown", handleClickOutside);
+        };
+    }, []);
 
     const handleSignUp = () => {
-        navigate("/signup");
+        setIsLoggedIn(true);
     };
 
     const handleCart = () => {
@@ -33,10 +49,11 @@ function Header({ styleNavbar }) {
     };
 
     const handleLogout = () => {
-        // Handle logout logic here
         setIsLoggedIn(false);
         setDropdownOpen(false);
-        navigate("/logout");
+        setTimeout(() => {
+            navigate("/signup");
+        }, 100); // Delay navigation to ensure state update
     };
 
     return (
@@ -63,53 +80,29 @@ function Header({ styleNavbar }) {
                             <div>Sign Up/Sign In</div>
                         </div>
                     ) : (
-                        <div
-                            className="header-User-Signin"
-                            onClick={handleUserSignIn}
-                        >
+                        <div className="header-User-Signin" onClick={handleUserSignIn} ref={dropdownRef}>
                             <img src={User} alt="User" />
                             <div>Username</div>
-                            <IoIosArrowDown />
+                            {dropdownOpen ? <IoIosArrowUp /> : <IoIosArrowDown />}
                             {dropdownOpen && (
                                 <div className="user-dropdown-menu">
-                                    <div
-                                        className="user-dropdown-item"
-                                        onClick={() => navigate("/profile")}
-                                    >
-                                        <FontAwesomeIcon
-                                            icon={faUser}
-                                            className="dropdown-icon"
-                                        />
-                                        My Profile
-                                    </div>
-                                    <div
-                                        className="user-dropdown-item"
-                                        onClick={() => navigate("/orders")}
-                                    >
-                                        <FontAwesomeIcon
-                                            icon={faBox}
-                                            className="dropdown-icon"
-                                        />
-                                        Orders
-                                    </div>
-                                    <div
-                                        className="user-dropdown-item"
-                                        onClick={() => navigate("/wishlist")}
-                                    >
-                                        <FontAwesomeIcon
-                                            icon={faHeart}
-                                            className="dropdown-icon"
-                                        />
-                                        Wishlist
-                                    </div>
-                                    <div
-                                        className="logout-btn"
-                                        onClick={handleLogout}
-                                    >
-                                        <TbLogout2
-                                            className="dropdown-icon" 
-                                        />
-                                        Logout
+                                    <div className="user-dropdown-container">
+                                        <div className="user-dropdown-item" onClick={() => navigate("/profile")}>
+                                            <FontAwesomeIcon icon={faUser} className="dropdown-icon" />
+                                            My Profile
+                                        </div>
+                                        <div className="user-dropdown-item" onClick={() => navigate("/myorders")}>
+                                            <BsStack className="dropdown-icon" />
+                                            Orders
+                                        </div>
+                                        <div className="user-dropdown-item" onClick={() => navigate("/wishlist")}>
+                                            <FontAwesomeIcon icon={faHeart} className="dropdown-icon" />
+                                            Wishlist
+                                        </div>
+                                        <div className="user-dropdown-item" onClick={handleLogout}>
+                                            <TbLogout2 className="dropdown-icon" />
+                                            Logout
+                                        </div>
                                     </div>
                                 </div>
                             )}

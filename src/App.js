@@ -12,6 +12,7 @@ import EmptyCart from "./components/order-section/cart/EmptyCart";
 import { WishlistProvider } from './context/WishlistContext';
 import Wishlist from "./components/wishlist-section/Wishlist";
 import ShoppingCart from "./components/order-section/shopping-cart/ShoppingCart";
+import MyOrders from "./components/order-section/order/MyOrders";
 
 function App() {
     return (
@@ -28,6 +29,7 @@ function App() {
                     <Route path="/emptycart" element={<EmptyCart />} />
                     <Route path="/wishlist" element={<Wishlist />} />
                     <Route path="/shoppingcart" element={<ShoppingCart />} />
+                    <Route path="/myorders" element={<MyOrders />} />
                 </Routes>
             </BrowserRouter>
         </WishlistProvider>

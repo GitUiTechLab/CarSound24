@@ -1,39 +1,169 @@
+.myorders-container {
+    padding: 20px;
+    margin-top: 60px;
+}
+  
+.myorders-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding: 10px;
+}
+  
+.myorders-title {
+    font-size: 23px;
+    font-weight: 700;
+}
+
+.order-total {
+    font-size: 23px;
+    font-weight: 400;
+}
+  
+.order-total span {
+    margin-left: 10px;
+    font-size: 21px;
+    font-weight: 700;
+    color: red;
+}
+  
+.myorders-card-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background-color: #FCE8E9;
+    padding: 20px;
+}
+  
+.order-card {
+    display: flex;
+    align-items: center;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+  
+.order-image  {
+    width: 320px;
+    height: 160px;
+    object-fit: contain;
+    margin-right: 20px;
+}
+  
+.order-details {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+  
+.order-info {
+    display: flex;
+    flex-direction: column;
+}
+  
+.order-name {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+  
+.order-price {
+    font-size: 16px;
+    color: red;
+    margin-bottom: 10px;
+}
+  
+.current-price {
+    font-weight: bold;
+}
+  
+.original-price {
+    text-decoration: line-through;
+    margin-left: 10px;
+    color: gray;
+}
+  
+.order-delivery {
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+  
+.delivery-date {
+    font-weight: bold;
+    color: #4682B4;
+}
+  
+.order-actions {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+  
+.view-order-details,
+.rate-product {
+    background-color: #E31E24;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    margin-top: 10px;
+}
+  
+.rate-product {
+    background-color: #ffffff;
+    border: 1px solid #E31E24;
+    color: #E31E24;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+  
+.view-order-details:hover,
+.rate-product:hover {
+    background-color: #ffffff;
+    border: 1px solid #E31E24;
+    color: #E31E24;
+}
+  
+.rate-product:hover {
+    background-color: #E31E24;
+    color: #ffffff;
+}
+  
 .myorders-subheader {
     position: relative;
     background-color: #fff; 
     z-index: 1;
     box-shadow: 0px 4px 40px 0px #0000000D;
 }
-
-.myorders .nav-link {
+  
+.myorders-subheader .nav-link {
     color: #000000;
 }
-
-.myorders .shop-link {
+  
+.myorders-subheader .shop-link {
     color: #000000;
 }
-
-.myorders .search-bar input {
+  
+.myorders-subheader .search-bar input {
     background-color: #F5F5F5;
     color: #000;
 }
-
-.myorders .search-bar button {
+  
+.myorders-subheader .search-bar button {
     background-color: #000;
 }
-
-.myorders .search-bar button .search-icon {
+  
+.myorders-subheader .search-bar button .search-icon {
     color: #ffffff;
 }
-
-.myorders-navbar .header-cart {
+  
+.myorders-header .header-cart {
     display: none;
-}
-
-.myorders .header-login {
-    display: none;
-}
-
-.myorders .header-User-Signin {
-    display: flex;
 }
