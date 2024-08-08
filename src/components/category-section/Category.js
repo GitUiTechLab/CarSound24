@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "../../css/Homepage.css";
+import { useNavigate } from "react-router-dom";
 import touchscreenImage from "../../assets/cat-1.jpeg";
 import inDashNavigationImage from "../../assets/cat-2.jpeg";
 import dvdVideoPlayersImage from "../../assets/cat-3.jpeg";
@@ -7,6 +7,7 @@ import digitalMediaReceiversImage from "../../assets/cat-4.jpeg";
 import bluetoothCarKitsImage from "../../assets/cat-5.jpeg";
 import amplifiersEqualizersImage from "../../assets/cat-6.jpeg";
 import Underline from "../../assets/underline.png";
+import "../../css/Homepage.css";
 
 const categories = [
     { 
@@ -73,9 +74,14 @@ const categories = [
 
 function Category() {
     const [selectedCategory, setSelectedCategory] = useState(null);
+    const navigate = useNavigate();
 
     const handleClick = (id) => {
         setSelectedCategory(id);
+    };
+
+    const handleProductPage = () => {
+        navigate("/productpage");
     };
 
     return (
@@ -99,6 +105,7 @@ function Category() {
                             src={category.image}
                             alt={category.name}
                             className="categoryImg"
+                            onClick={handleProductPage}
                         />
                         <p>{category.name}</p>
                     </div>

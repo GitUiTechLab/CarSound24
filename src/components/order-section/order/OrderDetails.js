@@ -4,6 +4,9 @@ import Footer from '../../footer-section/Footer';
 import SubHeader from '../../header-section/SubHeader';
 import Header from '../../header-section/Header';
 import image1 from '../../../assets/cat-1.jpeg';
+import { MdOutlineCancel } from "react-icons/md";
+import { FaCheck } from "react-icons/fa";
+import ChatImg from '../../../assets/whatsapp.png';
 
 function OrderDetails() {
   const order = {
@@ -16,9 +19,9 @@ function OrderDetails() {
     delivered: false,
     orderStatusHead: "Your item has been picked up by courier partner.",
     orderStatus: [
-      { status: 'Order Received', date: 'Mon, 15th Jul', time: '8:50 pm' },
-      { status: 'Confirmed', date: 'Mon, 15th Jul', time: '8:50 pm' },
-      { status: 'Packed', date: 'Mon, 15th Jul', time: '8:50 pm' },
+      { status: 'Your Order has been placed.', date: 'Mon, 15th Jul', time: '8:50 pm' },
+      { status: 'Seller has processed your order.', date: 'Mon, 15th Jul', time: '8:50 pm' },
+      { status: 'Item has been dispatched', date: 'Mon, 15th Jul', time: '8:50 pm' },
     ],
   };
 
@@ -29,6 +32,15 @@ function OrderDetails() {
     delivery: '₹ 60',
     total: '₹ 2000',
   };
+
+  const progressSteps = [
+    { label: 'Order Received', completed: true },
+    { label: 'Confirmed', completed: true },
+    { label: 'Packed', completed: false },
+    { label: 'On the Way', completed: false },
+    { label: 'Delivered', completed: false },
+    { label: 'Returned', completed: false },
+  ];
 
   return (
     <div>
@@ -63,16 +75,23 @@ function OrderDetails() {
         </div>
         <div className='orderprogress-container'>
           <div className='orderprogress'>
-            {['Order Received', 'Confirmed', 'Packed', 'On the Way', 'Delivered', 'Returned'].map((status, index) => (
-              <div key={index} className={`progress-step ${index < 3 ? 'completed' : ''}`}>
-                <div className='progress-circle'>{index + 1 < 10 ? `0${index + 1}` : index + 1}</div>
-                <div className='progress-label'>{status}</div>
-              </div>
+            {progressSteps.map((step, index) => (
+              <React.Fragment key={index}>
+                <div className={`progress-step ${step.completed ? 'completed' : ''}`}>
+                  <div className='progress-circle'>
+                    {step.completed ? <FaCheck /> : (index + 1 < 10 ? `0${index + 1}` : index + 1)}
+                  </div>
+                  <div className='progress-label'>{step.label}</div>
+                </div>
+                {index < progressSteps.length - 1 && (
+                  <div className={`progress-bar ${progressSteps[index + 1].completed ? 'completed' : ''}`}></div>
+                )}
+              </React.Fragment>
             ))}
           </div>
           <div className='order-query-container'>
-            <button className='cancel-order'>Cancel Order</button>
-            <button className='chat'>Chat</button>
+            <button className='cancel-order'><MdOutlineCancel /> Cancel Order</button>
+            <button className='chat'><img src={ChatImg} alt='Chat Icon' /> Chat</button>
           </div>
         </div>
         <div className='order-status-container'>

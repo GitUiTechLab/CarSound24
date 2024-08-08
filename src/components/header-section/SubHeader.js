@@ -1,12 +1,14 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import logo from "../../assets/logo.png";
 import { IoSearchOutline } from "react-icons/io5";
 import { IoMdArrowDropdown } from "react-icons/io";
 import { useNavigate } from "react-router-dom";
+import CategoryDropdown from "./CategoryDropdown";
 import "../header-section/Header.css";
 
 function SubHeader({ isScrolled, styleHeader }) {
     const navigate = useNavigate();
+    const [isDropdownVisible, setIsDropdownVisible] = useState(false);
 
     const handleContactUs = () => {
         navigate("/contactus");
@@ -16,9 +18,26 @@ function SubHeader({ isScrolled, styleHeader }) {
         navigate("/");
     };
 
-    const handleProfile = () => {
-        navigate("/profile");
+    const toggleDropdown = () => {
+        setIsDropdownVisible(!isDropdownVisible);
     };
+
+    const handleClickOutside = (event) => {
+        if (!event.target.closest(".category-dropdown") && !event.target.closest(".shop-link")) {
+            setIsDropdownVisible(false);
+        }
+    };
+
+    useEffect(() => {
+        if (isDropdownVisible) {
+            document.addEventListener("click", handleClickOutside);
+        } else {
+            document.removeEventListener("click", handleClickOutside);
+        }
+        return () => {
+            document.removeEventListener("click", handleClickOutside);
+        };
+    }, [isDropdownVisible]);
 
     return (
         <header className={`sub-header ${styleHeader} ${isScrolled ? "scrolled" : ""}`}>
@@ -36,7 +55,7 @@ function SubHeader({ isScrolled, styleHeader }) {
                 </div>
                 <div className="nav-links">
                     <a
-                        onClick={handleProfile}
+                        onClick={toggleDropdown}
                         className={`shop-link ${isScrolled ? "scrolled" : ""}`}
                     >
                         Shop by category
@@ -50,6 +69,7 @@ function SubHeader({ isScrolled, styleHeader }) {
                     </a>
                 </div>
             </nav>
+            <CategoryDropdown isVisible={isDropdownVisible} />
         </header>
     );
 }
