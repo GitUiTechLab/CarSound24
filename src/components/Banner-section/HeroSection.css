@@ -1,0 +1,254 @@
+/* Hero-Section */
+
+.hero-section {
+    position: relative;
+    height: 700px;
+    display: flex;
+    flex-direction: column;
+    background: url('../../assets/Banner1.png') no-repeat center center/cover;
+    overflow: hidden;
+  }
+  
+  .hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(43.58deg, #000000 1.24%, rgba(83, 83, 83, 0) 98.76%);
+    z-index: 1;
+    pointer-events: none;
+  }
+  
+  .hero-section h1, p {
+    position: relative;
+    z-index: 2;
+    color: #ffffff;
+  }
+  
+  .head1 {
+    width: 700px;
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 67.2px;
+  }
+  
+  .para1 {
+    width: 600px;
+    font-size: 19px;
+    font-weight: 400;
+    line-height: 26.6px;
+    padding-bottom: 30px;
+  }
+  
+  .banner-btn {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .contact-button {
+    width: 260px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    font-size: 19px;
+    font-weight: 500;
+    padding: 10px 20px;
+    border: 1px solid white;
+    border-radius: 10px;
+    color: var(--color-white);
+    cursor: pointer;
+    position: relative;
+    z-index: 2;
+    background-color: transparent;
+  }
+  
+  .shop-button {
+    width: 260px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    font-size: 19px;
+    font-weight: 500;
+    padding: 10px 20px;
+    border: none;
+    background-color: var(--color-secondary);
+    border-radius: 10px;
+    color: white;
+    cursor: pointer;
+    position: relative;
+    z-index: 2;
+  }
+  
+  .content-section {
+    margin-top: 250px;
+    padding: 20px;
+    margin-left: 30px;
+  }
+  
+  /* DownArrow.css */
+  
+  .down-arrow {
+    position: absolute;
+    bottom: 20px;
+    cursor: pointer;
+    animation: bounce 2s infinite;
+    z-index: 10;
+    margin-left: 1400px;
+    margin-bottom: 100px;
+  }
+  
+  .down-arrow.up img {
+    transform: rotate(180deg);
+  }
+  
+  @keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+      transform: translateY(0);
+    }
+    40% {
+      transform: translateY(-10px);
+    }
+    60% {
+      transform: translateY(-5px);
+    }
+  }
+
+
+  /* Responsive adjustments */
+  @media (max-width: 1200px) {
+    .hero-section {
+      height: 600px;
+    }
+    
+    .head1 {
+      width: 100%;
+      font-size: 40px;
+      line-height: 56px;
+    }
+    
+    .para1 {
+      width: 100%;
+      font-size: 18px;
+      line-height: 24px;
+    }
+  }
+
+  @media (max-width: 992px) {
+    .hero-section {
+      height: 500px;
+    }
+
+    .content-section {
+      margin-top: 200px;
+      margin-left: 20px;
+    }
+
+    .head1 {
+      font-size: 36px;
+      line-height: 48px;
+    }
+
+    .para1 {
+      font-size: 16px;
+      line-height: 22px;
+    }
+    
+    .contact-button, .shop-button {
+      width: 100%;
+      max-width: 300px;
+      font-size: 18px;
+    }
+
+  }
+
+  @media (max-width: 768px) {
+    .hero-section {
+      height: 450px;
+    }
+
+    .content-section {
+      margin-top: 150px;
+      margin-left: 15px;
+    }
+
+    .head1 {
+      font-size: 32px;
+      line-height: 42px;
+    }
+
+    .para1 {
+      font-size: 15px;
+      line-height: 20px;
+    }
+  }
+
+  @media (max-width: 576px) {
+    .hero-section {
+      height: 462px;
+    }
+
+    .content-section {
+      margin-top: 100px;
+      margin-left: 10px;
+    }
+
+    .head1 {
+      font-size: 28px;
+      line-height: 38px;
+    }
+
+    .para1 {
+      font-size: 14px;
+      line-height: 18px;
+    }
+
+    .contact-button, .shop-button {
+      font-size: 16px;
+      height: 50px;
+    }
+
+    .down-arrow {
+      margin-bottom: 50px;
+    }
+  }
+
+  @media (max-width: 400px) {
+    .hero-section {
+        width: 100%;
+        height: 450px;
+    }
+
+    .content-section {
+      margin-top: 120px;
+      margin-left: 5px;
+    }
+
+    .head1 {
+      font-size: 22px;
+      line-height: 34px;
+      margin-bottom: 20px;
+    }
+
+    .para1 {
+      font-size: 12px;
+      line-height: 16px;
+    }
+
+    .contact-button, .shop-button {
+      font-size: 14px;
+      height: 45px;
+    }
+
+    .down-arrow {
+      margin-bottom: 20px;
+      width: 25px;
+      height: 25px;
+      right: 20px;
+    }
+  }

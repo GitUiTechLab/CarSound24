@@ -3,14 +3,14 @@ import DownArrow from "../DownArrow";
 import Call from "../../assets/call.png";
 import SideArrow from "../../assets/arrow.png";
 import { useNavigate } from "react-router-dom";
-import "../../css/Homepage.css";
+import "./HeroSection.css";
 
 function HeroSection({ footerRef }) {
     const [arrowDirection, setArrowDirection] = useState("down");
     const navigate = useNavigate();
 
-    const handleWishlist = () => {
-        navigate("/wishlist");
+    const handleShopNow = () => {
+        navigate("/productpage");
     };
 
     const handleContactUs = () => {
@@ -44,7 +44,7 @@ function HeroSection({ footerRef }) {
                             <img src={Call} alt="Call" />
                             Contact Us
                         </button>
-                        <button onClick={handleWishlist} className="shop-button">
+                        <button onClick={handleShopNow} className="shop-button">
                             Shop Now
                             <img src={SideArrow} alt="SideArrow" />
                         </button>

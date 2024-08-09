@@ -7,7 +7,7 @@ import digitalMediaReceiversImage from "../../assets/cat-4.jpeg";
 import bluetoothCarKitsImage from "../../assets/cat-5.jpeg";
 import amplifiersEqualizersImage from "../../assets/cat-6.jpeg";
 import Underline from "../../assets/underline.png";
-import "../../css/Homepage.css";
+import "./Category.css";
 
 const categories = [
     { 
@@ -72,6 +72,7 @@ const categories = [
     },
 ];
 
+
 function Category() {
     const [selectedCategory, setSelectedCategory] = useState(null);
     const navigate = useNavigate();
@@ -92,24 +93,26 @@ function Category() {
                 </h2>
                 <img src={Underline} alt="Underline" className="underline" />
             </div>
-            <div className="categories">
-                {categories.map((category) => (
-                    <div
-                        key={category.id}
-                        className={`categoryItem ${
-                            selectedCategory === category.id ? "selected" : ""
-                        }`}
-                        onClick={() => handleClick(category.id)}
-                    >
-                        <img
-                            src={category.image}
-                            alt={category.name}
-                            className="categoryImg"
-                            onClick={handleProductPage}
-                        />
-                        <p>{category.name}</p>
-                    </div>
-                ))}
+            <div className="slider-container">
+                <div className="categories">
+                    {categories.map((category) => (
+                        <div
+                            key={category.id}
+                            className={`categoryItem ${
+                                selectedCategory === category.id ? "selected" : ""
+                            }`}
+                            onClick={() => handleClick(category.id)}
+                        >
+                            <img
+                                src={category.image}
+                                alt={category.name}
+                                className="categoryImg"
+                                onClick={handleProductPage}
+                            />
+                            <p>{category.name}</p>
+                        </div>
+                    ))}
+                </div>
             </div>
         </div>
     );

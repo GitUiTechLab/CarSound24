@@ -1,5 +1,5 @@
 import React from 'react'
-import '../css/Homepage.css';
+import '../components/Banner-section/HeroSection.css';
 import Downarrow from '../assets/downarrow.png';
 
 function DownArrow({ direction, onClick }) {

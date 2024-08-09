@@ -4,6 +4,7 @@ import Truck from '../../assets/truck.png';
 import Badge from '../../assets/badge.png';
 import UserStar from '../../assets/userstar.png';
 import HelpDesk from '../../assets/helpdesk.png';
+import './About.css';
 
 function About() {
     return (
