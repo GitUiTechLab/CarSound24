@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faStar } from "@fortawesome/free-solid-svg-icons";
+import './Rating.css';
+import Footer from '../../footer-section/Footer';
 import Header from '../../header-section/Header';
 import SubHeader from '../../header-section/SubHeader';
-import Footer from '../../footer-section/Footer';
-import './Rating.css';
+import { faStar } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 function Rating() {
     const [rating, setRating] = useState(0);

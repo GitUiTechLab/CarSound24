@@ -1,5 +1,5 @@
 import React from 'react';
-import '../../css/Homepage.css';
+import './Contact.css';
 
 const ContactForm = () => {
   return (
@@ -15,7 +15,7 @@ const ContactForm = () => {
         <div className="form-group">
           <textarea resize="false" placeholder="Tell us your situation"></textarea>
         </div>
-        <button type="submit">Send</button>
+        <button className='contact-btn' type="submit">Send</button>
       </form>
     </div>
   );

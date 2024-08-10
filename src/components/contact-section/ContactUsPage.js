@@ -1,9 +1,9 @@
 import React from 'react';
-import Header from '../header-section/Header';
-import SubHeader from '../header-section/SubHeader';
-import Contact from './Contact';
-import Footer from '../footer-section/Footer';
 import './Contact.css';
+import Contact from './Contact';
+import Header from '../header-section/Header';
+import Footer from '../footer-section/Footer';
+import SubHeader from '../header-section/SubHeader';
 
 function ContactUsPage() {
   return (

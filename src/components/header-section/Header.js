@@ -1,17 +1,17 @@
 import React, { useState, useEffect, useRef } from "react";
-import { useNavigate } from "react-router-dom";
-import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
-import { FiMenu, FiX } from "react-icons/fi";
-import { BsStack } from "react-icons/bs";
-import { TbLogout2 } from "react-icons/tb";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faUser, faHeart } from "@fortawesome/free-solid-svg-icons";
+import "../header-section/Header.css";
 import Call from "../../assets/call.png";
 import Mail from "../../assets/mail.png";
 import Cart from "../../assets/cart.png";
 import User from "../../assets/user.png";
-import "../header-section/Header.css";
+import { BsStack } from "react-icons/bs";
+import { TbLogout2 } from "react-icons/tb";
 import LogoImg from "../../assets/logo.png";
+import { FiMenu, FiX } from "react-icons/fi";
+import { useNavigate } from "react-router-dom";
+import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faUser, faHeart } from "@fortawesome/free-solid-svg-icons";
 
 function Header({ styleNavbar }) {
     const navigate = useNavigate();

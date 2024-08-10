@@ -1,8 +1,8 @@
 import React from 'react';
+import './Testimonial.css';
 import Slider from './Slider';
 import user1 from '../../assets/user1.png';
 import user2 from '../../assets/user2.png';
-import './Testimonial.css';
 
 const testimonials = [
   {

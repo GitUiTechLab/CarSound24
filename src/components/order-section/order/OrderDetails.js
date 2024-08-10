@@ -1,12 +1,12 @@
 import React from 'react';
 import './Order.css';
-import Footer from '../../footer-section/Footer';
-import SubHeader from '../../header-section/SubHeader';
-import Header from '../../header-section/Header';
-import image1 from '../../../assets/cat-1.jpeg';
-import { MdOutlineCancel } from "react-icons/md";
 import { FaCheck } from "react-icons/fa";
+import image1 from '../../../assets/cat-1.jpeg';
+import Header from '../../header-section/Header';
+import { MdOutlineCancel } from "react-icons/md";
+import Footer from '../../footer-section/Footer';
 import ChatImg from '../../../assets/whatsapp.png';
+import SubHeader from '../../header-section/SubHeader';
 
 function OrderDetails() {
   const order = {

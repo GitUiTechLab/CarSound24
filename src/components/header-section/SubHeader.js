@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
+import "../header-section/Header.css";
 import logo from "../../assets/logo.png";
-import { IoSearchOutline } from "react-icons/io5";
-import { IoMdArrowDropdown } from "react-icons/io";
 import { useNavigate } from "react-router-dom";
 import CategoryDropdown from "./CategoryDropdown";
-import "../header-section/Header.css";
+import { IoSearchOutline } from "react-icons/io5";
+import { IoMdArrowDropdown } from "react-icons/io";
 
 function SubHeader({ isScrolled, styleHeader }) {
     const navigate = useNavigate();

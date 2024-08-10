@@ -1,8 +1,8 @@
 import React from 'react';
-import MessageIcon from "../../assets/Message.png";
+import './Contact.css';
 import MobileIcon from "../../assets/Mobile.png";
+import MessageIcon from "../../assets/Message.png";
 import LocationIcon from "../../assets/Location.png";
-import '../../css/Homepage.css';
 
 const ContactMap = () => {
   return (

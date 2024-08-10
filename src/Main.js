@@ -1,14 +1,14 @@
 import React, { useState, useEffect, useRef } from 'react';
-import "@fontsource/lato";
 import "./App.css";
-import Header from "./components/header-section/Header";
-import SubHeader from "./components/header-section/SubHeader";
-import HeroSection from "./components/Banner-section/HeroSection";
-import Category from "./components/category-section/Category";
+import "@fontsource/lato";
 import About from "./components/about-section/About";
+import Footer from "./components/footer-section/Footer";
+import Header from "./components/header-section/Header";
 import Product from "./components/product-section/Product";
 import Contact from "./components/contact-section/Contact";
-import Footer from "./components/footer-section/Footer";
+import Category from "./components/category-section/Category";
+import SubHeader from "./components/header-section/SubHeader";
+import HeroSection from "./components/Banner-section/HeroSection";
 import TestimonialSection from './components/testimonial-section/TestimonialSection';
 
 function Main() {

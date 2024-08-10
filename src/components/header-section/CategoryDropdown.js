@@ -1,7 +1,7 @@
 import React, { useState } from "react";
+import "./CategoryDropdown.css";
 import CatImg1 from "../../assets/shopbycat-1.png";
 import CatImg2 from "../../assets/shopbycat-2.jpeg";
-import "./CategoryDropdown.css";
 
 const categoriesData = [
     {

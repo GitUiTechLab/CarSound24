@@ -1,10 +1,10 @@
 import React from "react";
-import Underline from '../../assets/underline.png';
-import Truck from '../../assets/truck.png';
+import './About.css';
 import Badge from '../../assets/badge.png';
+import Truck from '../../assets/truck.png';
 import UserStar from '../../assets/userstar.png';
 import HelpDesk from '../../assets/helpdesk.png';
-import './About.css';
+import Underline from '../../assets/underline.png';
 
 function About() {
     return (

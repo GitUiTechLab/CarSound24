@@ -1,15 +1,15 @@
 import React from "react";
-import ProductCard from "../product-section/ProductCard";
-import Header from "../header-section/Header";
-import SubHeader from "../header-section/SubHeader";
-import Footer from "../footer-section/Footer";
-import ProductImage from "./ProductImage";
-import ProdDetails from "./ProdDetails";
-import products from "../product-section/ProductData";
-import ProdData from "../product-details/ProdData";
 import "./ProductDetails.css";
-import RatingsAndReviews from "./RatingsAndReviews";
 import Review from "./Review";
+import ProdDetails from "./ProdDetails";
+import ProductImage from "./ProductImage";
+import Header from "../header-section/Header";
+import Footer from "../footer-section/Footer";
+import ProdData from "../product-details/ProdData";
+import SubHeader from "../header-section/SubHeader";
+import RatingsAndReviews from "./RatingsAndReviews";
+import products from "../product-section/ProductData";
+import ProductCard from "../product-section/ProductCard";
 
 const productData = ProdData[0];
 

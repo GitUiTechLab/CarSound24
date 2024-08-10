@@ -1,10 +1,10 @@
-import React from 'react'
+import React from 'react';
 import './EmptyCart.css';
 import Header from '../../header-section/Header';
-import SubHeader from '../../header-section/SubHeader';
 import Footer from '../../footer-section/Footer';
-import emptyCart from '../../../assets/emptyCart.png';
 import Contact from '../../contact-section/Contact';
+import emptyCart from '../../../assets/emptyCart.png';
+import SubHeader from '../../header-section/SubHeader';
 
 function EmptyCart() {
   return (
@@ -31,4 +31,4 @@ function EmptyCart() {
   )
 }
 
-export default EmptyCart
+export default EmptyCart;

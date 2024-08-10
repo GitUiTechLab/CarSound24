@@ -1,9 +1,9 @@
 import React, { useState } from "react";
+import "./HeroSection.css";
 import DownArrow from "../DownArrow";
 import Call from "../../assets/call.png";
 import SideArrow from "../../assets/arrow.png";
 import { useNavigate } from "react-router-dom";
-import "./HeroSection.css";
 
 function HeroSection({ footerRef }) {
     const [arrowDirection, setArrowDirection] = useState("down");

@@ -1,14 +1,14 @@
 import React, { useState } from "react";
-import { GoogleOAuthProvider, GoogleLogin } from "@react-oauth/google";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
+import "../signup-page/SignUp.css";
 import Header from "../header-section/Header";
-import SubHeader from "../header-section/SubHeader";
-import Contact from "../contact-section/Contact";
 import Footer from "../footer-section/Footer";
 import SignInImg from "../../assets/signin.png";
 import SignUpImg from "../../assets/signup.jpeg";
-import "../signup-page/SignUp.css";
+import Contact from "../contact-section/Contact";
+import SubHeader from "../header-section/SubHeader";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
+import { GoogleOAuthProvider, GoogleLogin } from "@react-oauth/google";
 
 function SignUp() {
     const [isSignIn, setIsSignIn] = useState(true);

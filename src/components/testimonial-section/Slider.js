@@ -1,7 +1,7 @@
 import React, { useState } from "react";
+import "./Testimonial.css";
 import PrevArrow from "../../assets/prev-arrow.png";
 import NextArrow from "../../assets/next-arrow.png";
-import "./Testimonial.css";
 
 const Slider = ({ testimonials }) => {
     const [currentIndex, setCurrentIndex] = useState(0);

@@ -1,6 +1,6 @@
 import React from 'react'
-import '../components/Banner-section/HeroSection.css';
 import Downarrow from '../assets/downarrow.png';
+import '../components/Banner-section/HeroSection.css';
 
 function DownArrow({ direction, onClick }) {
   return (

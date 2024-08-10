@@ -1,10 +1,10 @@
 import React, { useState } from "react";
+import "./Profile.css";
+import Footer from "../footer-section/Footer";
 import Header from "../header-section/Header";
 import SubHeader from "../header-section/SubHeader";
-import Footer from "../footer-section/Footer";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
-import "./Profile.css";
 
 function Profile() {
     const [fullname, setFullname] = useState("");

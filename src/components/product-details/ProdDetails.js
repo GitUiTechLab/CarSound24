@@ -1,9 +1,9 @@
 import React, { useState, useEffect, useRef } from "react";
-import "@fortawesome/fontawesome-free/css/all.min.css";
-import chatImg from "../../assets/whatsapp.png";
-import { useWishlist } from '../../context/WishlistContext';
-import { useNavigate } from "react-router-dom";
 import "./ProductDetails.css";
+import { useNavigate } from "react-router-dom";
+import chatImg from "../../assets/whatsapp.png";
+import "@fortawesome/fontawesome-free/css/all.min.css";
+import { useWishlist } from '../../context/WishlistContext';
 
 const ProdDetails = ({ product }) => {
     const [isWishlist, setIsWishlist] = useState(false);

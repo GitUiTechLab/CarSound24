@@ -1,7 +1,7 @@
 import React from "react";
+import "./Product.css";
 import { CiSearch } from "react-icons/ci";
 import { IoIosCloseCircleOutline } from "react-icons/io";
-import "./Product.css";
 
 const ProductFilters = () => {
     return (

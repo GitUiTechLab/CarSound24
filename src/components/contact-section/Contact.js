@@ -1,8 +1,8 @@
 import React from "react";
+import "./Contact.css";
 import ContactMap from "./ContactMap";
 import ContactForm from "./ContactForm";
 import Underline from "../../assets/underline.png";
-import "./Contact.css";
 
 function Contact() {
     return (

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import '@fortawesome/fontawesome-free/css/all.min.css';
-import { useNavigate } from "react-router-dom"; 
 import '../product-section/Product.css';
+import { useNavigate } from "react-router-dom"; 
+import '@fortawesome/fontawesome-free/css/all.min.css';
 
 
 const ProductCard = ({ product }) => {

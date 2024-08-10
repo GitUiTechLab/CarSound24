@@ -1,13 +1,13 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
-import touchscreenImage from "../../assets/cat-1.jpeg";
-import inDashNavigationImage from "../../assets/cat-2.jpeg";
-import dvdVideoPlayersImage from "../../assets/cat-3.jpeg";
-import digitalMediaReceiversImage from "../../assets/cat-4.jpeg";
-import bluetoothCarKitsImage from "../../assets/cat-5.jpeg";
-import amplifiersEqualizersImage from "../../assets/cat-6.jpeg";
-import Underline from "../../assets/underline.png";
 import "./Category.css";
+import { useNavigate } from "react-router-dom";
+import Underline from "../../assets/underline.png";
+import touchscreenImage from "../../assets/cat-1.jpeg";
+import dvdVideoPlayersImage from "../../assets/cat-3.jpeg";
+import inDashNavigationImage from "../../assets/cat-2.jpeg";
+import bluetoothCarKitsImage from "../../assets/cat-5.jpeg";
+import digitalMediaReceiversImage from "../../assets/cat-4.jpeg";
+import amplifiersEqualizersImage from "../../assets/cat-6.jpeg";
 
 const categories = [
     { 

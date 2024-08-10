@@ -1,9 +1,9 @@
 import React, { useEffect } from "react";
-import Header from "../header-section/Header";
-import SubHeader from "../header-section/SubHeader";
-import Footer from "../footer-section/Footer";
-import { useWishlist } from "../../context/WishlistContext";
 import "./Wishlist.css";
+import Header from "../header-section/Header";
+import Footer from "../footer-section/Footer";
+import SubHeader from "../header-section/SubHeader";
+import { useWishlist } from "../../context/WishlistContext";
 
 function Wishlist() {
     const { wishlist, setWishlist, removeFromWishlist } = useWishlist();

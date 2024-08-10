@@ -1,13 +1,13 @@
 import React from 'react';
-import Header from '../../header-section/Header';
-import SubHeader from '../../header-section/SubHeader';
+import './Order.css';
+import { FaStar } from "react-icons/fa6";
 import { useNavigate } from "react-router-dom";
-import Footer from '../../footer-section/Footer';
 import image1 from '../../../assets/cat-1.jpeg';
 import image2 from '../../../assets/cat-2.jpeg';
 import image3 from '../../../assets/cat-3.jpeg';
-import { FaStar } from "react-icons/fa6";
-import './Order.css';
+import Header from '../../header-section/Header';
+import Footer from '../../footer-section/Footer';
+import SubHeader from '../../header-section/SubHeader';
 
 function MyOrders() {
   const orders = [

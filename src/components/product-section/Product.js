@@ -1,10 +1,10 @@
 import React from "react";
+import products from "./ProductData";
+import '../product-section/Product.css';
 import ProductCard from "./ProductCard";
-import Underline from "../../assets/underline.png";
 import Arrow from "../../assets/arrow.png";
 import { useNavigate } from "react-router-dom";
-import '../product-section/Product.css';
-import products from "./ProductData";
+import Underline from "../../assets/underline.png";
 
 
 function Product() {

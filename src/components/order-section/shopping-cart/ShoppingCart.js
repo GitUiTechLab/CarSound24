@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
+import "./ShoppingCart.css";
 import Header from "../../header-section/Header";
-import SubHeader from "../../header-section/SubHeader";
 import Footer from "../../footer-section/Footer";
+import SubHeader from "../../header-section/SubHeader";
 import { useWishlist } from '../../../context/WishlistContext';
 import CartSummary from "../../order-section/shopping-cart/CartSummary";
 import CheckoutForm from "../../order-section/shopping-cart/CheckoutForm";
-import "./ShoppingCart.css";
 
 const ShoppingCart = () => {
     const [cartItems, setCartItems] = useState([]);
