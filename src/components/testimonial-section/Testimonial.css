@@ -48,7 +48,7 @@
 }
 
 .profileContainer {
-  background: url('../../assets/comma.png');
+  background: url('../../assets/comma.png') no-repeat center center/cover;
   width: 350px;
   height: 226px;
   display: flex;
@@ -146,13 +146,16 @@
 
   .slider-container {
       margin-top: 10px;
-      width: 95%;
-      margin-bottom: -100px;
+      width: 100%;
+      height: auto;
+      margin-bottom: -90px;
+      padding: 10px;
+      margin-left: -2px;
   }
 
   .slider-button {
-    width: 10px;
-    margin-left: -90px;
+    width: 80px;
+    margin-top: -180px;
   }
 
   .testimonial-card-container {
@@ -167,28 +170,31 @@
   }
 
   .profileContainer {
-      width: 100%;
-      height: auto;
-      margin-bottom: 10px;
+      width: 220px;
+      height: 150px;
+      margin-bottom: 20px;
+      border-radius: 10px;
   }
 
   .profileDetails {
-    width: 205px;
-    height: 225px;
+    width: 50px;
+    border-radius: 10px;
   }
 
   .name-role{
-    width: 100px;
+    margin-top: -10px;
+    width: 80px;
+    font-size: 18px;
+
   }
 
   .profileImage {
-      width: 120px;
-      height: 120px;
-      margin-left: -70px;
+      width: 80px;
+      height: 80px;
+      margin-left: -40px;
   }
 
   .cardText {
-      margin: 10px;
       text-align: center;
       font-size: 14px;
   }

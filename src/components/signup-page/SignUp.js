@@ -78,7 +78,7 @@ function SignUp() {
                                 <div className="auth-form">
                                     <h2>Welcome Back to CAR SOUND 24</h2>
                                     <p>Stay connected with the best in car audio accessories.</p>
-                                    <div className="auth-header">
+                                    <div className="authheader">
                                         <button
                                             onClick={() => setIsSignIn(true)}
                                             className={isSignIn ? "active" : ""}
@@ -151,7 +151,7 @@ function SignUp() {
                                 <div className="auth-form">
                                     <h2>Join Car Sound 24</h2>
                                     <p>Stay Tuned with the Latest in Car Audio - Join Car Sound 24</p>
-                                    <div className="auth-header">
+                                    <div className="authheader">
                                         <button
                                             onClick={() => setIsSignIn(true)}
                                             className={isSignIn ? "active" : ""}

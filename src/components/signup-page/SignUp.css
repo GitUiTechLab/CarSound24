@@ -6,7 +6,7 @@
     margin-top: 60px;
 }
 
-.auth-header {
+.authheader {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -19,10 +19,10 @@
     border-radius: 10px;
 }
 
-.auth-header button {
+.authheader button {
     background: none;
     border: none;
-    padding: 8px 15px;
+    padding: 8px 58.5px;
     cursor: pointer;
     font-size: 16px;
     font-weight: 400;
@@ -30,7 +30,7 @@
     border-radius: 10px;
 }
 
-.auth-header .active {
+.authheader .active {
     font-weight: bold;
     background-color: #fff;
     color: #333333;
