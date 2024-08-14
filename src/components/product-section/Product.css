@@ -205,7 +205,7 @@
   
   .image-indicator {
     position: absolute;
-    bottom: 15px;
+    top: 75%;
     left: 50%;
     transform: translateX(-50%);
     display: flex;

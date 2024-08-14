@@ -16,12 +16,12 @@ function Wishlist() {
         setWishlist(savedWishlist);
     }, [setWishlist]);
 
-    const addToCart = () => {
+    const addToCart = (product) => {
         const cartItems = JSON.parse(localStorage.getItem("cart")) || [];
-        const itemExists = cartItems.some((item) => item.id === wishlist.id);
-
+        const itemExists = cartItems.some((item) => item.id === product.id);
+    
         if (!itemExists) {
-            cartItems.push({ ...wishlist });
+            cartItems.push({ ...product });
             localStorage.setItem("cart", JSON.stringify(cartItems));
             navigate("/shoppingcart");
         } else {
@@ -50,14 +50,14 @@ function Wishlist() {
                                 <div className="item-details">
                                     <div className="product-name">{product.name}</div>
                                     <p className="price">
-                                        ₹ {product.discountedPrice || product.price}{" "}
+                                        {product.discountedPrice || product.price}{" "}
                                         <span className="old-price">
-                                            ₹ {product.originalPrice}
+                                            {product.originalPrice}
                                         </span>
                                     </p>
                                 </div>
                                 <div className="item-actions">
-                                    <button onClick={addToCart} className="add-to-cart">
+                                    <button onClick={() => addToCart(product)} className="add-to-cart">
                                         +{" "} Add to cart
                                     </button>
                                     <button
