@@ -37,6 +37,7 @@ const ShoppingCart = () => {
             <Header />
             <SubHeader styleHeader={"shoppingcart-subheader"} />
 
+            {/* Conditionally render EmptyCart or the cart content */}
             {cartItems.length === 0 ? (
                 <EmptyCart />
             ) : (
@@ -51,8 +52,8 @@ const ShoppingCart = () => {
                             {cartItems.map((item) => (
                                 <div className="cart-item" key={item.id}>
                                     <div className="cart-item-image">
-                                        {item.image && (
-                                            <img src={item.image} alt={item.name} />
+                                        {item.images && item.images[0] && (
+                                            <img src={item.images[0] || item.image} alt={item.name} />
                                         )}
                                     </div>
                                     <div className="cart-item-details">

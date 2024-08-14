@@ -3,13 +3,9 @@ import './ShoppingCart.css';
 
 const CartSummary = ({ cartItems }) => {
     const subtotal = cartItems.reduce((sum, item) => {
-        const priceString = item.discountedPrice && typeof item.discountedPrice === 'string' 
-            ? item.discountedPrice 
-            : '0';
-
+        const priceString = item.discountedPrice ? item.discountedPrice : item.price || '0';
         const price = parseFloat(priceString.replace(/[^0-9.-]+/g, ""));
-        const itemTotal = isNaN(price) ? 0 : price * item.quantity;
-
+        const itemTotal = isNaN(price) ? 0 : price * (item.quantity || 1);
         return sum + itemTotal;
     }, 0);
 
