@@ -1,17 +1,33 @@
 import React, { useEffect } from "react";
 import "./Wishlist.css";
 import Header from "../header-section/Header";
+import { useNavigate } from "react-router-dom";
 import Footer from "../footer-section/Footer";
 import SubHeader from "../header-section/SubHeader";
 import { useWishlist } from "../../context/WishlistContext";
 
+
 function Wishlist() {
     const { wishlist, setWishlist, removeFromWishlist } = useWishlist();
+    const navigate = useNavigate();
 
     useEffect(() => {
         const savedWishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
         setWishlist(savedWishlist);
     }, [setWishlist]);
+
+    const addToCart = () => {
+        const cartItems = JSON.parse(localStorage.getItem("cart")) || [];
+        const itemExists = cartItems.some((item) => item.id === wishlist.id);
+
+        if (!itemExists) {
+            cartItems.push({ ...wishlist });
+            localStorage.setItem("cart", JSON.stringify(cartItems));
+            navigate("/shoppingcart");
+        } else {
+            alert("Item is already in the cart");
+        }
+    };
 
     return (
         <div>
@@ -34,14 +50,14 @@ function Wishlist() {
                                 <div className="item-details">
                                     <div className="product-name">{product.name}</div>
                                     <p className="price">
-                                        ₹ {product.discountedPrice}{" "}
+                                        ₹ {product.discountedPrice || product.price}{" "}
                                         <span className="old-price">
                                             ₹ {product.originalPrice}
                                         </span>
                                     </p>
                                 </div>
                                 <div className="item-actions">
-                                    <button className="add-to-cart">
+                                    <button onClick={addToCart} className="add-to-cart">
                                         +{" "} Add to cart
                                     </button>
                                     <button

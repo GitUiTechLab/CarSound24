@@ -7,7 +7,6 @@ import { useWishlist } from '../../context/WishlistContext';
 const ProductCard = ({ product }) => {
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
     const [isWishlist, setIsWishlist] = useState(false);
-    const [isFavorited, setIsFavorited] = useState(false);
     const navigate = useNavigate();
 
     const { addToWishlist, removeFromWishlist, wishlist } = useWishlist();
