@@ -52,7 +52,7 @@ function Header({ styleNavbar }) {
     };
 
     const handleCart = () => {
-        navigate("/emptycart");
+        navigate("/shoppingcart");
     };
 
     const handleLogoClick = () => {

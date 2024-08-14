@@ -39,7 +39,7 @@
 
 .header-cart {
     border: 2px solid #F5F5F5;
-    border-radius: 20px;
+    border-radius: 10px;
     padding: 5px 10px;
     cursor: pointer;
     color: #ffffff;
@@ -350,6 +350,35 @@
     margin-right: 10px;
     font-size: 40px;
 }
+
+
+/* Search Drop Down */
+.search-dropdown {
+    position: absolute;
+    top: 100%;
+    left: 200;
+    width: 100%; 
+    background: transparent;
+    backdrop-filter: blur(40px);
+    color: #ffffff;
+    z-index: 1000;
+    max-height: 200px;
+    max-width: 650px;
+    overflow-y: auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box; 
+}
+
+.search-item {
+    padding: 10px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.search-item:hover {
+    background-color: transparent;
+}
+
 
 @media (max-width: 768px) {
     .hamburger-menu {

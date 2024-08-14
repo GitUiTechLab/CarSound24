@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Header from "../header-section/Header";
 import SubHeader from "../header-section/SubHeader";
 import Footer from "../footer-section/Footer";
@@ -7,6 +7,12 @@ import ProductList from "./ProductList";
 import "./Product.css";
 
 function ProductPage() {
+    const [sortOption, setSortOption] = useState("Recommended");
+
+    const handleSortChange = (event) => {
+        setSortOption(event.target.value);
+    };
+
     return (
         <div>
             <Header />
@@ -18,16 +24,16 @@ function ProductPage() {
                     </div>
                     <div className="sort-by">
                         Sort By :{" "}
-                        <select>
+                        <select onChange={handleSortChange}>
                             <option>Recommended</option>
-                            <option>Price: Low to High</option>
-                            <option>Price: High to Low</option>
+                            <option value="lowToHigh">Price: Low to High</option>
+                            <option value="highToLow">Price: High to Low</option>
                         </select>
                     </div>
                 </div>  
                 <div className="content">
                     <ProductFilters />
-                    <ProductList />
+                    <ProductList sortOption={sortOption} />
                 </div>
             </div>
             <Footer />

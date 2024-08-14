@@ -2,7 +2,17 @@ import React from 'react';
 import './ShoppingCart.css';
 
 const CartSummary = ({ cartItems }) => {
-    const subtotal = cartItems.reduce((sum, item) => sum + parseFloat(item.discountedPrice.replace(/[^0-9.-]+/g, "")) * item.quantity, 0);
+    const subtotal = cartItems.reduce((sum, item) => {
+        const priceString = item.discountedPrice && typeof item.discountedPrice === 'string' 
+            ? item.discountedPrice 
+            : '0';
+
+        const price = parseFloat(priceString.replace(/[^0-9.-]+/g, ""));
+        const itemTotal = isNaN(price) ? 0 : price * item.quantity;
+
+        return sum + itemTotal;
+    }, 0);
+
     const shipping = 100;
     const total = subtotal + shipping;
 

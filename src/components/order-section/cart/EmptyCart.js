@@ -9,8 +9,8 @@ import SubHeader from '../../header-section/SubHeader';
 function EmptyCart() {
   return (
     <div className='emptycart-container'>
-        <Header />
-        <SubHeader styleHeader={"cart-subhaeder"} />
+        {/* <Header />
+        <SubHeader styleHeader={"cart-subhaeder"} /> */}
 
         <div className='emptycart'>
             <div className='emptycart-head'>Cart</div>
@@ -26,7 +26,7 @@ function EmptyCart() {
             </div>
         </div>
         <Contact />
-        <Footer />    
+        {/* <Footer />     */}
     </div>
   )
 }

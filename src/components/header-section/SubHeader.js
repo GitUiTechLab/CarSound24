@@ -5,10 +5,13 @@ import { useNavigate } from "react-router-dom";
 import CategoryDropdown from "./CategoryDropdown";
 import { IoSearchOutline } from "react-icons/io5";
 import { IoMdArrowDropdown } from "react-icons/io";
+import ProductData from "../product-section/ProductData"; // Import your product data
 
 function SubHeader({ isScrolled, styleHeader }) {
     const navigate = useNavigate();
     const [isDropdownVisible, setIsDropdownVisible] = useState(false);
+    const [searchInput, setSearchInput] = useState("");
+    const [filteredProducts, setFilteredProducts] = useState([]);
 
     const handleContactUs = () => {
         navigate("/contactus");
@@ -23,7 +26,10 @@ function SubHeader({ isScrolled, styleHeader }) {
     };
 
     const handleClickOutside = (event) => {
-        if (!event.target.closest(".category-dropdown") && !event.target.closest(".shop-link")) {
+        if (
+            !event.target.closest(".category-dropdown") &&
+            !event.target.closest(".shop-link")
+        ) {
             setIsDropdownVisible(false);
         }
     };
@@ -39,19 +45,61 @@ function SubHeader({ isScrolled, styleHeader }) {
         };
     }, [isDropdownVisible]);
 
+    const handleSearchChange = (event) => {
+        const value = event.target.value;
+        setSearchInput(value);
+
+        if (value.trim() === "") {
+            setFilteredProducts([]);
+        } else {
+            const filtered = ProductData.filter((product) =>
+                product.name.toLowerCase().includes(value.toLowerCase())
+            );
+            setFilteredProducts(filtered);
+        }
+    };
+
+    const handleProductClick = (product) => {
+        navigate(`/productdetails/${product.id}`);
+        setSearchInput("");
+        setFilteredProducts([]);
+    };
+
     return (
-        <header className={`sub-header ${styleHeader} ${isScrolled ? "scrolled" : ""}`}>
+        <header
+            className={`sub-header ${styleHeader} ${
+                isScrolled ? "scrolled" : ""
+            }`}
+        >
             <nav className="nav">
                 <div onClick={handleLogoClick} className="logo">
                     <img src={logo} alt="Car Sound 24" />
                 </div>
                 <div className={`search-bar ${isScrolled ? "scrolled" : ""}`}>
-                    <input type="text" placeholder="Search for products" />
+                    <input
+                        type="text"
+                        placeholder="Search for products"
+                        value={searchInput}
+                        onChange={handleSearchChange}
+                    />
                     <button type="button">
                         <span aria-label="search">
                             <IoSearchOutline className="search-icon" />
                         </span>
                     </button>
+                    {filteredProducts.length > 0 && (
+                        <div className="search-dropdown">
+                            {filteredProducts.map((product) => (
+                                <div
+                                    key={product.id}
+                                    className="search-item"
+                                    onClick={() => handleProductClick(product)}
+                                >
+                                    <span>{product.name}</span>
+                                </div>
+                            ))}
+                        </div>
+                    )}
                 </div>
                 <div className="nav-links">
                     <a

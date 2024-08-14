@@ -32,6 +32,8 @@ function App() {
                     <Route path="/shoppingcart" element={<ShoppingCart />} />
                     <Route path="order-details" element={<OrderDetails />} />
                     <Route path="/productdetails" element={<ProductDetails />} />
+                    <Route path="/productdetails/${product.id}" element={<ProductDetails />} />
+
                 </Routes>
             </BrowserRouter>
         </WishlistProvider>
